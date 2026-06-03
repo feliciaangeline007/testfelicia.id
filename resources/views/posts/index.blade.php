@@ -10,6 +10,9 @@
     @forelse ($posts as $post)
         <div class="panel">
             <h2>{{ $post->title }}</h2>
+            @foreach ($post->tags as $tag)
+                <span class="tag">{{ $tag->name }}</span>
+            @endforeach
             <p>{{ \Illuminate\Support\Str::limit($post->content, 140) }}</p>
             <a href="{{ route('posts.show', $post) }}" class="button secondary">Lihat</a>
             <a href="{{ route('posts.edit', $post) }}" class="button secondary">Edit</a>

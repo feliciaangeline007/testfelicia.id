@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\DB;
@@ -27,6 +28,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('auth')->group(function () {
     Route::resource('posts', PostController::class);
+    Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 
     Route::get('/csrf-demo', function () {
         return view('security.csrf-demo');
