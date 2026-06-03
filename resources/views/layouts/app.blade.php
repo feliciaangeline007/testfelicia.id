@@ -68,6 +68,35 @@
             font: inherit;
         }
 
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        .checkbox-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .checkbox-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .tag {
+            display: inline-block;
+            border-radius: 999px;
+            padding: 4px 8px;
+            margin: 0 6px 6px 0;
+            background: #e0f2fe;
+            color: #075985;
+            font-size: 13px;
+        }
+
         textarea {
             min-height: 160px;
         }
